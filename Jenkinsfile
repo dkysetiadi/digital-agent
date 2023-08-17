@@ -4,6 +4,7 @@ pipeline {
     }
     environment {
         GCP_SERVICE_ACCOUNT = credentials('SERVICE_ACCOUNT_GCP')
+        GCP_SSH_KEY = credentials('GCP_PRIVATE_KEY')
     }
 
     stages {
@@ -23,7 +24,7 @@ pipeline {
         stage('Active GCP Account') {
             steps {
                 echo 'Active Account'
-                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_PRIVATE_KEY" dickysetiadi64@34.101.98.183 "whoami"'
+                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "whoami"'
             }
         }
         stage('Deploy') {
