@@ -16,6 +16,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'cat "$GCP_SERVICE_ACCOUNT" | docker login -u _json_key --password-stdin https://gcr.io'  
+                sh 'docker push gcr.io/ferrous-module-395010/digital-agent:${BUILD_NUMBER}'
             }
         }
         stage('Deploy') {
