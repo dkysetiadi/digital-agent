@@ -3,7 +3,7 @@ pipeline {
         label 'docker'
     }
     environment {
-        GCP_SERVICE_ACCOUNT ('SERVICE_ACCOUNT_GCP')
+        GCP_SERVICE_ACCOUNT = credentials('SERVICE_ACCOUNT_GCP')
     }
 
     stages {
