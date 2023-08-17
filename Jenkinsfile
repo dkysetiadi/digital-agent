@@ -25,6 +25,7 @@ pipeline {
             steps {
                 echo 'Active Account'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "whoami"'
+                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "gcloud auth list"'
             }
         }
         stage('Deploy') {
