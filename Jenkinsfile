@@ -26,13 +26,12 @@ pipeline {
                 echo 'Active Account'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "whoami"'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "gcloud auth list"'
-                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "ifconfig"'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'helm repo add dkysetiadi-charts https://dkysetiadi.github.io/helm-charts/charts'
+                sh 'helm repo add rizky-charts https://adhithia21.github.io/helm-charts/charts'
             }
         }
     }
