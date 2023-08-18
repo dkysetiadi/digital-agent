@@ -31,7 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'helm repo remove dkysetiadi-charts'
+                sh 'helm repo list'
             }
         }
     }
