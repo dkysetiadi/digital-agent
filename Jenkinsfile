@@ -32,6 +32,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'helm repo add dkysetiadi-charts https://adhithia21.github.io/helm-charts/charts'
+                sh 'helm repo list'
             }
         }
     }
