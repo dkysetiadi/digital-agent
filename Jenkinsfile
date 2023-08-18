@@ -31,6 +31,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'helm repo add dkysetiadi-charts https://dkysetiadi.github.io/helm-charts/charts'
             }
         }
     }
