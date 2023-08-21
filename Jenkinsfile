@@ -33,10 +33,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                // sh 'helm repo add dkysetiadi-charts https://adhithia21.github.io/helm-charts/charts'
-                sh 'helm repo remove dkysetiadi-charts'
-                sh 'helm repo list'
-                // sh 'helm upgrade --install digital-agent dkysetiadi-charts/application'
+                sh 'helm repo add digital-agent-charts https://adhithia21.github.io/helm-charts/charts'
+                sh 'helm upgrade --install digital-agent digital-agent-charts/application'
             }
         }
     }
