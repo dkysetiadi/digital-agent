@@ -34,8 +34,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'helm repo add digital-agent-charts https://adhithia21.github.io/helm-charts/charts'
-                sh 'helm upgrade --install digital-agent digital-agent-charts/application'
+                sh 'helm repo remove dkysetiadi-charts'
+                sh 'helm repo list'
             }
         }
     }
