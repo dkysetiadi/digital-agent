@@ -5,6 +5,7 @@ pipeline {
     environment {
         GCP_SERVICE_ACCOUNT = credentials('SERVICE_ACCOUNT_GCP')
         GCP_SSH_KEY = credentials('GCP_PRIVATE_KEY')
+        KUBE_CONFIG = credentials('KUBE_CONFIG')
     }
 
     stages {
@@ -32,9 +33,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'helm repo add dkysetiadi-charts https://adhithia21.github.io/helm-charts/charts'
+                // sh 'helm repo add dkysetiadi-charts https://adhithia21.github.io/helm-charts/charts'
+                sh 'helm repo remove dkysetiadi-charts'
                 sh 'helm repo list'
-                sh 'helm upgrade --install digital-agent dkysetiadi-charts/application'
+                // sh 'helm upgrade --install digital-agent dkysetiadi-charts/application'
             }
         }
     }
