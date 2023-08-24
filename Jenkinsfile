@@ -33,10 +33,5 @@ pipeline {
                 // sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm upgrade --install digital-agent dkysetiadi-charts/application --set image=gcr.io/ferrous-module-395010/digital-agent:${BUILD_NUMBER}"'                
             }
         }
-        // stage('Deploy') {
-        //     steps {
-        //         echo 'Deploying....'
-        //     }
-        // }
     }
 }
