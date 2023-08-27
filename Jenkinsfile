@@ -30,7 +30,8 @@ pipeline {
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "gcloud container clusters get-credentials cluster-jenkins --zone asia-southeast2-a --project ferrous-module-395010"'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "kubectl get nodes"'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm repo add digitalagent https://dkysetiadi.github.io/helm-charts"'
-                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm upgrade --install digitalagent dkysetiadi-charts/application --set image=gcr.io/ferrous-module-395010/digital-agent:${BUILD_NUMBER}"'                
+                // sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm upgrade --install digitalagent dkysetiadi-charts/application --set image=gcr.io/ferrous-module-395010/digital-agent:${BUILD_NUMBER}"'
+                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm upgrade --install digitalagent dkysetiadi-charts/application"'
             }
         }
     }
