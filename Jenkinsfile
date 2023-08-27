@@ -31,6 +31,7 @@ pipeline {
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "kubectl get nodes"'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm repo add digitalagent https://dkysetiadi.github.io/helm-charts/charts"'
                 sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm upgrade --install digitalagent dkysetiadi-charts/application"'
+                sh 'ssh -o StrictHostKeyChecking=no -i "$GCP_SSH_KEY" dickysetiadi64@34.101.98.183 "helm ls"'         
             }
         }
     }
