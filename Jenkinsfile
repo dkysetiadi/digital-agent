@@ -35,9 +35,4 @@ pipeline {
         //     }
         // }
     }
-    post{
-        failure{
-            slackSend( channel: "#jenkins", token: "SLACK_TOKEN", color: "good", message: "Test Email")
-        }
-    }
 }
